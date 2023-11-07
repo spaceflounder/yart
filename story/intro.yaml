@@ -1,0 +1,18 @@
+
+msg: |
+  A gentle breeze rustles the tall branches high above, a bit of
+  creek babbles merrily nearby.
+
+buttons:
+  -
+    label: search
+    msg: You close your eyes and sniff the cool, moist air.
+
+  -
+    label: north
+    nav: caveMouth
+
+  -
+    label: east
+    nav: hillside
+

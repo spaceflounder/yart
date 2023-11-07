@@ -1,0 +1,12 @@
+
+msg: |
+  A narrow path winds up a low hill, passing near the ruin
+  of a little gray cottage.
+
+buttons:
+  - 
+    label: west
+    nav: intro
+  -
+    label: north
+    nav: cottage

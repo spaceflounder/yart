@@ -1,0 +1,18 @@
+
+msg: |
+  Like the open maw of a great and sinister beast, a black cave opens in the
+  cool shadows of the mountain. Jagged dark pillars of stone rise from the
+  ground, like the teeth of a shark.
+  
+  Near the opening is a weathered sign, hastily scrawled in faded ink.
+
+buttons:
+  -
+    label: search
+    msg: |
+      Desperate warnings of terrible death are written in over a dozen
+      languages. Sadly, you can't read any of them, so on we go.
+
+  - 
+    label: south
+    nav: intro
