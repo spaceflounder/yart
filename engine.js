@@ -44,9 +44,9 @@ function displayMsg(page) {
     const state = page?.state ?? 'default';
     let s = ''
     if (state === 'default') {
-        s = handleTemplates(page['msg']);
+        s = handleTemplates(page['show']);
     } else {
-        s = handleTemplates(page[state]['msg']);
+        s = handleTemplates(page[state]['show']);
     }
     s = SmartyPants(s);
     s = markdownProcess(s);
@@ -72,8 +72,11 @@ function setIcon(possibleIcon) {
         'search',
         'check',
         'cancel',
-
+        'chat',
     ];
+    if (possibleIcon === 'use') {
+        possibleIcon = 'back_hand';
+    }
     if (iconSet.indexOf(possibleIcon) > -1) {
         return `<span class="material-symbols-outlined iconSize">${possibleIcon}</span>`;
     }
@@ -100,16 +103,17 @@ function handleActions(page) {
             const action = () => {
                 const buttons = document.querySelector("#btns");
                 buttons.innerHTML = '';
-                if (b.story) {
-                    MergeRecursive(story, b.story);
+                actions = {};
+                if (b.change) {
+                    MergeRecursive(story, b.change);
                 }
-                const nav = b.nav;
+                const nav = b.go;
                 if (nav && story[nav]) {
                     const newRoom = story[nav];
                     actions = {};
                     pageName = nav;
-                    if (b['msg']) {
-                        bufferText = b['msg'];
+                    if (b['show']) {
+                        bufferText = b['show'];
                     }
                     execute(newRoom);
                 } else {
@@ -160,8 +164,16 @@ function parseConditionToken(token) {
 
 
 function singleConditionCheck(token) {
+    const reverse = token.indexOf('!') > -1;
+    token = token.replaceAll('!', '');
     const obj = token.split('.')[0];
     const prop = token.split('.')[1];
+    if (reverse) {
+        if (story[obj][prop]) {
+            return false;
+        }
+        return true;
+    }
     if (story[obj][prop]) {
         return true;
     }
@@ -184,6 +196,39 @@ function conditionCheck(condition) {
 }
 
 
+function getSortedActions() {
+
+    const keys = Object.keys(actions);
+    let arr = [];
+
+    const verbs = [
+        'check',
+        'cancel',
+        'use',
+        'search',
+        'chat',
+    ];
+
+    const directions = [
+        'north_west',
+        'north',
+        'north_east',
+        'east',
+        'south_east',
+        'south',
+        'south_west',
+        'west',
+    ];
+
+    arr = [...verbs.filter(k => keys.indexOf(k) > -1)];
+    arr = [...arr, ...keys.filter(k => verbs.indexOf(k) === -1 && directions.indexOf(k) === -1)];
+    arr = [...arr, ...directions.filter(k => keys.indexOf(k) > -1)];
+
+    return arr;
+
+}
+
+
 function refreshActions(page) {
     const state = page?.state ?? 'default';
     const buttons = document.querySelector("#btns");
@@ -193,7 +238,8 @@ function refreshActions(page) {
         const stateActions = handleActions(page[state]);
         actions = {...actions, ...stateActions};
     }
-    for (const key of Object.keys(actions)) {
+    const sorted = getSortedActions();
+    for (const key of sorted) {
         const btn = document.createElement('button');
         btn.innerHTML = actions[key].label;
         btn.onclick = actions[key].action;
@@ -206,7 +252,7 @@ function execute(page) {
     if (!page) {
         page = story[pageName];
     }
-    if (!page.msg) {
+    if (!page.show) {
         throw `Error: Page not implemented yet!`;
     }
     displayMsg(page);
