@@ -1,0 +1,21 @@
+
+content: |
+  A gentleman with snow-white hair sat next to me. His eyes were smart and quick, and
+  he grew a narrow moustache over his thin, pale lips.
+
+  "Good morning," he said. "Are you Victoria Behr, the journalist?"
+
+buttons:
+  -
+    label: yes
+    content: |
+      "Yes," I said, somewhat shocked. "And you are?"
+    go: withBlanc2
+
+  -
+    label: disadvantage
+    content: |
+      I gave him a sour look. "Sir, I perceive you have
+      me at a disadvantage."
+    go: withBlanc2
+

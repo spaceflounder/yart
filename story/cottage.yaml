@@ -1,5 +1,5 @@
 
-msg: |
+content: |
   The inside of the cottage is a tight, musty space, dimly lit through
   the cracked windows and broken roof. A bit of worn rug covers what's
   left of the floor.
@@ -7,22 +7,27 @@ msg: |
 buttons:
   -
     label: search
-    msg: There seems to be draft of cool air coming from under the rug.
+    content: There seems to be draft of cool air coming from under the rug.
   
   -
-    label: back_hand
-    clear: true
-    msg: You pull the rug aside to reveal a hole deep into the ground.
-    story:
+    label: use
+    content: You pull the rug aside to reveal a hole deep into the ground.
+    visible:
+      - cottage.state!
+    change:
       cottage:
         state: opened
 
   -
     label: south
-    nav: hillside
+    go: hillside
+  
+  -
+    label: chat
+    content: Talking to yourself accomplishes nothing.
 
 opened:
-  msg: |
+  content: |
     The inside of the cottage is a tight, musty space, dimly lit through
     the cracked windows and broken roof. Where there used to be a rug is 
     a dark narrow hole into the ground.
@@ -30,10 +35,6 @@ opened:
   buttons:
     -
       label: search
-      msg: The rug has been moved to reveal a dark hole into the ground.
-    
-    -
-      label: back_hand
-      msg: |
-        You've already revealed the hole, and the rug isn't worth taking.
+      content: The rug has been moved to reveal a dark hole into the ground.
+
 

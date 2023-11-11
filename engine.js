@@ -44,16 +44,20 @@ function displayMsg(page) {
     const state = page?.state ?? 'default';
     let s = ''
     if (state === 'default') {
-        s = handleTemplates(page['show']);
+        s = handleTemplates(page['content']);
     } else {
-        s = handleTemplates(page[state]['show']);
+        if (page[state]['content']) {
+            s = handleTemplates(page[state]['content']);
+        } else {
+            s = handleTemplates(page['content']);
+        }
+    }
+    if (bufferText !== '') {
+        s = `\n\n${bufferText}\n\n` + s;
+        bufferText = '';
     }
     s = SmartyPants(s);
     s = markdownProcess(s);
-    if (bufferText !== '') {
-        s = bufferText + s;
-        bufferText = '';
-    }
     output.innerHTML = s;
 }
 
@@ -112,8 +116,8 @@ function handleActions(page) {
                     const newRoom = story[nav];
                     actions = {};
                     pageName = nav;
-                    if (b['show']) {
-                        bufferText = b['show'];
+                    if (b['content']) {
+                        bufferText = b['content'];
                     }
                     execute(newRoom);
                 } else {
@@ -156,6 +160,10 @@ function MergeRecursive(obj1, obj2) {
 function parseConditionToken(token) {
     const obj = token.split('.')[0] ?? undefined;
     const prop = token.split('.')[1] ?? undefined;
+    if (prop === 'state') {
+        const state = story[obj][prop] ?? 'default';
+        return state;
+    }
     if (story[obj] && story[obj][prop]) {
         return story[obj][prop];
     }
@@ -186,10 +194,10 @@ function conditionCheck(condition) {
         return singleConditionCheck(condition);
     }
     const [left, op, right] = condition.split(' ');
-    if (op === '=') {
+    if (op === 'is') {
         return parseConditionToken(left) === parseConditionToken(right);
     }
-    if (op === '!=') {
+    if (op === 'not') {
         return parseConditionToken(left) !== parseConditionToken(right);
     }
     throw `Condition command not understood: ${condition}`;
@@ -252,7 +260,7 @@ function execute(page) {
     if (!page) {
         page = story[pageName];
     }
-    if (!page.show) {
+    if (!page.content) {
         throw `Error: Page not implemented yet!`;
     }
     displayMsg(page);
@@ -260,11 +268,22 @@ function execute(page) {
 }
 
 
+function showError(error) {
+    const output = document.getElementById('out');
+    output.append(error);
+}
+
+
 function restartStory() {
     
-    const storyFile = atob(stl);
+    const storyFile = decompress(stl);
     actions = {};
-    story = JSON.parse(storyFile);
+    try {
+        story = JSON.parse(storyFile);
+    } catch {
+        showError(storyFile);
+        throw (storyFile);
+    }
     const firstPage = story['gameInfo']['start'];
     document.title = story['gameInfo']['title'];
     pageName = firstPage;

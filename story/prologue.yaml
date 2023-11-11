@@ -1,0 +1,20 @@
+
+content: |
+  He punched my ticket. "Well, Miss Behr, you can't get a better view, anywhere
+  in the world."
+
+  The attendants took my bags and I found my seat. Soon, Zermatt vanished in the
+  morning fog. Big pats of snow hit the window.
+
+buttons:
+  - 
+    label: search
+    content: |
+      I read the newspaper for a bit. Andy Capp was funny today.
+    go: withBlanc
+    
+  -
+    label: use
+    content: |
+      I sipped my coffee and gazed out the window.
+    go: withBlanc

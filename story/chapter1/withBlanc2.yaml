@@ -1,0 +1,30 @@
+
+content: |
+  He gave me a coy grin. "My name is Louis Blanc. I own a few hotels
+  in and around Paris." His voice was pleasantly tinged with a
+  gentle French accent.
+
+  I nodded. "I've heard of you. You own more than a few hotels."
+
+  "And I, my madame, have heard of you. For such a young lady, you've
+  already enjoyed no small measure of success."
+
+buttons: 
+  -
+    label: thank you
+    content: |
+      "Thank you," I said with a slight blush. "Pleased to
+      make your acquaintance."
+
+      "I assure you, the pleasure is surely mine, Madame Behr." His
+      eyes twinkled behind thin spectacles.
+    go: withBlanc3
+
+  -
+    label: very kind
+    content: |
+      "You're very kind," I said, "But I really am just a humble
+      reporter. I get a penny a word like anyone else."
+
+      "You're too modest, my dear," said Blanc.
+    go: withBlanc3

@@ -1,0 +1,90 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #040404;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: large;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+h1 {
+    font-family: 'Cormorant', serif;
+    font-size: xx-large;
+}
+
+
+h2 {
+    font-family: 'Cormorant', serif;
+    font-size: x-large;
+}
+
+
+h3 {
+    font-family: 'Cormorant', serif;
+    font-size: larger;
+}
+
+
+.iconSize {
+    font-size: 300%;
+}
+
+button {
+    width: 45vw;
+    height: 45vw;
+    max-width: 9em;
+    max-height: 9em;
+    margin: 0.23em;
+    background-color: #111131;
+    color: rgba(255, 255, 255, 0.7);
+    border: 0;
+    border-radius: 2px;
+    font-size: larger;
+}
+
+#out-wrapper {
+    padding: 1em;
+    width: 98vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#out {
+    padding-left: 1em;
+    padding-right: 1em;
+    max-width: 60ch;
+    min-height: 49vh;
+}
+
+#btns-wrapper {
+    width: 99vw;
+    max-height: 49vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

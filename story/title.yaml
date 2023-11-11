@@ -1,0 +1,28 @@
+
+content: |
+  # The Gray Man
+
+  ## A game by spaceflounder
+
+  To answer that question, I'll have to go back a few hours, to
+  Zermatt, 1949, in the shadow of the Matterhorn.
+
+  Mr. Underton, the superintendent, was a tall man with bushy eyebrows
+  and a bulky frame. He glanced briefly through my passport.
+  "Mademoiselle Victoria Behr, all the way from
+  New York City. What brings you to Switzerland?"
+
+buttons:
+  -
+    label: pleasure
+    content: |
+      "Just passing through," I said. "I've always wanted to see
+      the Alps."
+    go: prologue
+
+  - 
+    label: business
+    content: |
+      "Oh, I've just finished a foreign assignment," I said. "The Olympics
+      in London. But I couldn't cross the Atlantic without first seeing the Alps."
+    go: prologue
