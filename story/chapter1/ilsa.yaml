@@ -24,7 +24,7 @@ buttons:
       "Have a nice trip home," I said, getting up from the counter.
 
       "Pleasure to chat with you," said Ilsa.
-    visible:
+    active:
       - ilsa.hasMet
 
   -

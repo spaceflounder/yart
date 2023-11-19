@@ -1,0 +1,29 @@
+{
+    "$id": "https://example.com/story.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Game Info Data File",
+    "description": "Game info and options",
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "description": "Game title"
+      },
+      "author": {
+        "type": "string",
+        "description": "Game author"
+      },
+      "genre": {
+        "type": "string",
+        "description": "Story genre"
+      },
+      "publication date": {
+        "type": "string",
+        "description": "Game publication date"
+      },
+      "start": {
+        "type": "string",
+        "description": "First story node"
+      }
+    }
+  }

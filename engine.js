@@ -88,11 +88,11 @@ function setIcon(possibleIcon) {
 }
 
 
-function getActionVisible(b) {
-    if (!b.visible) {
+function getActionActive(b) {
+    if (!b.active) {
         return true;
     } else {
-        return [...b.visible].filter(x => conditionCheck(x)).length > 0;
+        return [...b.active].filter(x => conditionCheck(x)).length > 0;
     }
 }
 
@@ -103,7 +103,7 @@ function handleActions(page) {
         const buttons = [...page.buttons];
         for (const b of buttons) {
             const label = b?.label ?? undefined;
-            const visible = getActionVisible(b);
+            const active = getActionActive(b);
             const action = () => {
                 const buttons = document.querySelector("#btns");
                 buttons.innerHTML = '';
@@ -125,7 +125,7 @@ function handleActions(page) {
                     execute(b);    
                 }            
             };
-            if (label && visible) {
+            if (label && active) {
                 obj[label] = {
                    label: setIcon(label),
                    action,

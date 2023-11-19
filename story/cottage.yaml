@@ -12,7 +12,7 @@ buttons:
   -
     label: use
     content: You pull the rug aside to reveal a hole deep into the ground.
-    visible:
+    active:
       - cottage.state!
     change:
       cottage:
