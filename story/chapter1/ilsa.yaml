@@ -1,0 +1,82 @@
+
+content: |
+  {{ilsa.DefiniteArticle}} sat at the counter with a steaming cup of tea and a 
+  black fountain pen. The letter before her was already a couple of pages,
+  and long, flowing script continued to flow from her wrinkled hand.
+
+buttons:
+  -
+    label: search
+    content: |
+      {{ilsa.DefiniteArticle}} had olive skin, and her hair was mostly dark
+      brown with long streaks of white. There was a modest wooden cross hanging from her neck.
+      The letter seemed to be for a nun in a distant convent, and was littered with
+      Biblical passages.
+  
+  -
+    label: east
+    go: chapter1/inDinerCar
+
+  -
+    label: east
+    go: chapter1/inDinerCar
+    content: |
+      "Have a nice trip home," I said, getting up from the counter.
+
+      "Pleasure to chat with you," said Ilsa.
+    active:
+      - ilsa.hasMet
+
+  -
+    label: use
+    content: |
+      I considered ordering some breakfast myself, but wasn't exactly hungry, and
+      a simple journalist cannot afford too many indulgences whilst abroad.
+  
+  -
+    label: chat
+    change: 
+      ilsa:
+        indefiniteArticle: Ilsa
+        definiteArticle: Ilsa
+        hasMet: true
+      chapter1/ilsa:
+        state: talking
+    content: |
+      "Good morning," I said. "My name is Victoria."
+
+      She glanced up from her writing with a haggard grin. "Nice to meet you. My
+      name is Ilsa."
+
+talking:
+  buttons:
+    -
+      label: chat
+      content: |
+        "I'm a reporter with the New York Times, from America," I said. "Where
+        are you from?"
+
+        "Rome, originally," responded Ilsa. "I'm headed back to my convent now,
+        near Zumpano in southern Italy."
+
+    -
+      label: tea
+      content: |
+        "What kind of tea are you drinking?"
+
+        "Black English breakfast," said Ilsa. "No cream. Cream at this hour gives me
+        rheumatism."
+      
+    -
+      label: letter
+      content: |
+        "Whom are you writing a letter to?" I asked.
+
+        "An old friend," she said. "I meant to see her on this trip but
+        she was quite ill." She took another sip of tea.
+
+        "I'm sorry to hear that," I said.
+
+        "When we were young, we were very close," said Ilsa. "Now we are old
+        and time has taken it's toll."
+

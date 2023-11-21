@@ -1,0 +1,29 @@
+
+content: |
+  Blanc paused for a moment with a curious smile. "I have a strange favor to
+  ask. Do you have some writing of yours, not published in a newspaper article?"
+
+  "I have an unfinished novella in my luggage. Just about twenty pages or so."
+
+  "I would very much like to read it."
+
+buttons:
+  -
+    label: of course
+    content: |
+      "Of course," I said. "Let me just run to the baggage car."
+
+      "I recognize it is a strange request," he said, polishing his
+      spectacles. "But I adore fresh talent, and I think perhaps
+      fate has put us on the same train."
+    go: chapter1/blanc/page4
+
+  -
+    label: why?
+    content: |
+      "Why?" I asked. "Not to be rude, but how could you possibly
+      be interested in the scribblings of an American journalist?"
+
+      "Because someday you shall be a great novelist," said Blanc.
+      "I can sense talent, and I sense it in you."
+    go: chapter1/blanc/page4

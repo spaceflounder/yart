@@ -1,0 +1,14 @@
+
+content: |
+  Vast white mountains lumbered into the distance, slowly drifting by
+  as the train rumbled down the track.
+  The cabin was warm, comfortable, and a just a little hazy with smoke.
+
+buttons:
+  -
+    label: north
+    go: chapter1/inPassengerCar
+
+  -
+    label: south
+    go: chapter1/inDinerCar

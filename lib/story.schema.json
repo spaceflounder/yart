@@ -1,0 +1,48 @@
+{
+    "$id": "https://example.com/story.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Story Page Data File",
+    "description": "Story state and content",
+    "type": "object",
+    "properties": {
+      "content": {
+        "type": "string",
+        "description": "Content for this page"
+      },
+      "buttons": {
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string",
+                    "description": "Label text for button"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "Content to display on button press"
+                },
+                "active": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "change": {
+                    "type": "object",
+                    "description": "Modification to perform on story if button is pressed"
+                },
+                "go": {
+                    "type": "string",
+                    "description": "Destination to send player"
+                }
+            },
+            "required": ["label"]
+        }
+      },
+      "state": {
+        "type": "string",
+        "description": "Mutable state of page"
+      }
+    }
+  }

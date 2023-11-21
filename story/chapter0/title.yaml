@@ -1,0 +1,23 @@
+
+content: |
+  # {{gameInfo.title}}
+
+  ## A game by {{poodle.architect}}
+
+  Now, let me tell ye.
+
+buttons:
+  -
+    label: pleasure
+    color: '#771111'
+    content: |
+      "Just passing through," I said. "I've always wanted to see
+      the Alps."
+    go: chapter0/prologue
+
+  - 
+    label: business
+    content: |
+      "Oh, I've just finished a foreign assignment," I said. "The Olympics
+      in London. But I couldn't cross the Atlantic without first seeing the Alps."
+    go: chapter0/prologue

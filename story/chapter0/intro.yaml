@@ -1,0 +1,13 @@
+
+content: |
+  He raised the gun at me, point blank. The quiet rumble of the train 
+  disappeared, as did the pleasant chatter of passengers in the next car.
+  Even the mighty Alps vanished.
+
+  Only the gray man remained, and his gun. "Tell me, Miss Behr. I've heard your lies.
+  Who are you really?"
+
+buttons:
+  -
+    label: check
+    go: chapter0/title

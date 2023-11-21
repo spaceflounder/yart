@@ -1,0 +1,19 @@
+
+content:
+  The diner car was mostly empty; the passengers were
+  in their seats, watching the Alps drift by. At the counter
+  sat {{ilsa.indefiniteArticle}},
+  sipping a hot cup of tea. She appeared to be writing a letter.
+
+buttons:
+  -
+    label: north
+    go: chapter1/inSeat
+
+  -
+    label: west
+    go: chapter1/ilsa
+
+  -
+    label: south
+    go: chapter1/baggage1
