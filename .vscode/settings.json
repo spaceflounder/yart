@@ -1,0 +1,6 @@
+{
+    "yaml.schemas": {
+        "lib/story.schema.json": ["story/**"],
+        "lib/gameInfo.schema.json": ["gameInfo.yaml"],
+    }
+}
