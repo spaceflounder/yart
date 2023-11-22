@@ -1,9 +1,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #040404;
-    color: rgba(255, 255, 255, 0.7);
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: large;
     min-height: 100vh;
     display: flex;
@@ -18,20 +15,22 @@ html, body {
 
 
 h1 {
-    font-family: 'Cormorant', serif;
     font-size: xx-large;
 }
 
 
 h2 {
-    font-family: 'Cormorant', serif;
     font-size: x-large;
 }
 
 
 h3 {
-    font-family: 'Cormorant', serif;
     font-size: larger;
+}
+
+
+h3 {
+    font-size: large;
 }
 
 
