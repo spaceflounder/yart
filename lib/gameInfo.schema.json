@@ -17,6 +17,18 @@
         "type": "string",
         "description": "Story genre"
       },
+      "import": {
+        "type": "string",
+        "description": "Import string for Google Fonts. Use fonts.google.com to select nice web safe fonts for your story."
+      },
+      "font": {
+        "type": "string",
+        "description": "The base screen font. Use a common web-safe font, or use with the import command to import a Google Font."
+      },
+      "header font": {
+        "type": "string",
+        "description": "The header display font. Use a common web-safe font, or use with the import command to import a Google Font."
+      },
       "version": {
         "type": "string",
         "description": "Release version"
