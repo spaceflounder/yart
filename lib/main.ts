@@ -83,6 +83,8 @@ async function refreshset(setStory: (s: string) => void) {
     const comp = await Deno.readTextFile('lib/compress.js');
     const mark = await Deno.readTextFile('lib/mark.js');
     const mermaid = await Deno.readTextFile('lib/mermaid.js');
+    const actions = await Deno.readTextFile('lib/actions.js');
+    const lists = await Deno.readTextFile('lib/lists.js');
     const smart = await Deno.readTextFile('lib/smartypants.js');
     const ng = await Deno.readTextFile('lib/engine.js');
     let fileContent: string[] = [];
@@ -93,9 +95,19 @@ async function refreshset(setStory: (s: string) => void) {
     await readFile('gameInfo.yaml', fileContent, fileName, setError);
     await readFile('debug.yaml', fileContent, fileName, setError);
     const story = `{${fileContent.join(',')}}`;
-    const encodedStory = compress(story);
-    const encoded = `const stl = \`${encodedStory}\`;`;
-    const output = await denopack.minify(`${comp}${mark}${mermaid}${smart}${encoded}${ng}`, {
+    //const encodedStory = compress(story);
+    const encodedStory = JSON.stringify(story);
+    const encoded = `const stl = ${encodedStory};`;
+    const output = await denopack.minify(`
+      ${comp}
+      ${mark}
+      ${mermaid}
+      ${actions}
+      ${smart}
+      ${lists}
+      ${encoded}
+      ${ng}
+    `, {
       mangle: true,
       compress: true,
       toplevel: true
