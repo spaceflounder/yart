@@ -21,6 +21,14 @@
         "type": "string",
         "description": "Import string for Google Fonts. Use fonts.google.com to select nice web safe fonts for your story."
       },
+      "foreground": {
+        "type": "string",
+        "description": "The common foreground color. Used for the base screen font."
+      },
+      "background": {
+        "type": "string",
+        "description": "The common foreground color. Used for the base screen font."
+      },
       "font": {
         "type": "string",
         "description": "The base screen font. Use a common web-safe font, or use with the import command to import a Google Font."

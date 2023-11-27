@@ -82,6 +82,7 @@ async function refreshset(setStory: (s: string) => void) {
 
     const comp = await Deno.readTextFile('lib/compress.js');
     const mark = await Deno.readTextFile('lib/mark.js');
+    const mermaid = await Deno.readTextFile('lib/mermaid.js');
     const smart = await Deno.readTextFile('lib/smartypants.js');
     const ng = await Deno.readTextFile('lib/engine.js');
     let fileContent: string[] = [];
@@ -94,7 +95,7 @@ async function refreshset(setStory: (s: string) => void) {
     const story = `{${fileContent.join(',')}}`;
     const encodedStory = compress(story);
     const encoded = `const stl = \`${encodedStory}\`;`;
-    const output = await denopack.minify(`${comp}${mark}${smart}${encoded}${ng}`, {
+    const output = await denopack.minify(`${comp}${mark}${mermaid}${smart}${encoded}${ng}`, {
       mangle: true,
       compress: true,
       toplevel: true
