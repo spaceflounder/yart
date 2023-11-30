@@ -49,14 +49,14 @@ hr {
 
 
 .iconSize {
-    font-size: 300%;
+    font-size: 200%;
 }
 
 button {
     width: 45vw;
     height: 45vw;
-    max-width: 4.5em;
-    max-height: 4.5em;
+    max-width: 4.0em;
+    max-height: 4.0em;
     margin: 0.12em;
     color: rgba(255, 255, 255, 0.7);
     border: 0;
@@ -65,8 +65,8 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 200%;
-    line-height: 0.75em;
+    font-size: 150%;
+    line-height: 0.99em;
 }
 
 
@@ -83,10 +83,12 @@ button {
 }
 
 #out {
+    padding-top: 1em;
     padding-left: 1em;
     padding-right: 1em;
     max-width: 60ch;
     min-height: 50vh;
+    padding-bottom: 1em;
 }
 
 #btns-wrapper {
@@ -103,7 +105,7 @@ button {
 
 #btns {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;

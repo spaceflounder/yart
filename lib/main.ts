@@ -85,6 +85,8 @@ async function refreshset(setStory: (s: string) => void) {
     const mermaid = await Deno.readTextFile('lib/mermaid.js');
     const actions = await Deno.readTextFile('lib/actions.js');
     const lists = await Deno.readTextFile('lib/lists.js');
+    const achievements = await Deno.readTextFile('lib/achievements.js');
+    const styleCode = await Deno.readTextFile('lib/style.js');
     const smart = await Deno.readTextFile('lib/smartypants.js');
     const ng = await Deno.readTextFile('lib/engine.js');
     let fileContent: string[] = [];
@@ -93,6 +95,7 @@ async function refreshset(setStory: (s: string) => void) {
     }
     await scan('story', fileContent, fileName, setError);
     await readFile('gameInfo.yaml', fileContent, fileName, setError);
+    await readFile('achievements.yaml', fileContent, fileName, setError);
     await readFile('debug.yaml', fileContent, fileName, setError);
     const story = `{${fileContent.join(',')}}`;
     //const encodedStory = compress(story);
@@ -103,6 +106,8 @@ async function refreshset(setStory: (s: string) => void) {
       ${mark}
       ${mermaid}
       ${actions}
+      ${styleCode}
+      ${achievements}
       ${smart}
       ${lists}
       ${encoded}
