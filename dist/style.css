@@ -14,6 +14,15 @@ html, body {
 }
 
 
+aside {
+    margin: 1em;
+    padding: 0.5em;
+    padding-bottom: 0.01em;
+    border-radius: 0.25em;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
 .image {
     width: 100%;
     height: auto;
