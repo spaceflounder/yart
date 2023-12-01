@@ -85,6 +85,7 @@ async function refreshset(setStory: (s: string) => void) {
     const mermaid = await Deno.readTextFile('lib/mermaid.js');
     const actions = await Deno.readTextFile('lib/actions.js');
     const lists = await Deno.readTextFile('lib/lists.js');
+    const inherits = await Deno.readTextFile('lib/inherits.js');
     const achievements = await Deno.readTextFile('lib/achievements.js');
     const styleCode = await Deno.readTextFile('lib/style.js');
     const smart = await Deno.readTextFile('lib/smartypants.js');
@@ -107,6 +108,7 @@ async function refreshset(setStory: (s: string) => void) {
       ${mermaid}
       ${actions}
       ${styleCode}
+      ${inherits}
       ${achievements}
       ${smart}
       ${lists}
